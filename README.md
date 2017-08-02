@@ -1,4 +1,4 @@
-# Kết nối Postgres và Express qua database drive pg-promise dùng docker làm server.
+# Kết nối Postgres và Express qua pg-promise dùng docker làm server.
 
 ## B1: Pull images postgres và pgadmin4 về, tạo container để chạy postgres và pgadmin4.
 >Khởi tạo 2 container postgres và pgadmin4 với thông số cụ thể ở dưới(Lưu ý thông số để kết nối với Express):
@@ -17,7 +17,7 @@ docker run --name pgadmin --link pg:postgres  -p 5050:5050  -d fenglc/pgadmin4
 * Port đăng nhập pgadmin4: 5050<br />
   user: pgadmin4@pgadmin.org<br />
   password: admin <br />
-* Tạo một server: username là postgres + password là 123 + port 5432
+* Tạo một server: username là postgres + password là 123 + port 5433
 * Tạo thử một database tên là <strong>students</strong>
 ## B2: Khởi tạo project Express
 1. Khởi tạo project:
@@ -96,7 +96,9 @@ app.get('/',(req,res)=>{
 
 ```js
   npm node index.js
-```# postgres-pg-promise
+
+```
+
 
 ## B4: Dùng một số hàm cơ bản với pg-promise
 
@@ -111,7 +113,7 @@ app.get('/',(req,res)=>{
     .catch(err =>{
      console.log('ERROR: ',err);
      })
- }) 
+ })
  ```
  2. Thêm một giá trị vào bảng
 
